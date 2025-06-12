@@ -1,0 +1,237 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /*scroll-padding-top: 100px; /* Fix scroll jump under sticky nav */
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #fefefe;
+  color: #2c2c2c;
+  line-height: 1.6;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+/* Sticky Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+nav h2 {
+  font-size: 1.5rem;
+  color: #e06c75;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #e06c75;
+}
+
+/* All Sections */
+section {
+  min-height: 100vh;
+  padding: 0 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Background Section Modifier */
+.section-with-bg {
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section-with-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+#home.section-with-bg::before {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.section-with-bg * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero h1 span {
+  color: #e06c75;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  border: 1px solid #e06c75;
+  color: #e06c75;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #e06c75;
+  color: white;
+}
+
+/* Section Headings & Text */
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #e06c75;
+}
+
+section p {
+  font-size: 1.05rem;
+  color: #eee;
+  max-width: 700px;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: left;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 700px;
+  color: #fff;
+}
+
+.project-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ddd;
+}
+
+.project-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Resume Button */
+.download-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid #e06c75;
+  color: #e06c75;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.download-btn:hover {
+  background-color: #e06c75;
+  color: white;
+}
+
+/* Contact Links */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-links a {
+  color: #e06c75;
+  border: 1px solid #e06c75;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+  background-color: white;
+}
+
+.contact-links a:hover {
+  background-color: #e06c75;
+  color: white;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Remove the max-width limit that forced stacking */
+.project-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  transition: 0.3s;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+}
