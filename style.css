@@ -1,3 +1,4 @@
+/* Owner: ouzer.shema@gmail.com */
 /* Reset & Base */
 * {
   margin: 0;
@@ -235,3 +236,64 @@ section p {
     grid-template-columns: 1fr; /* Stack cards vertically */
   }
 }
+
+/* Responsive Navbar */
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e06c75;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.nav-toggle-label span {
+  width: 25px;
+  height: 3px;
+  background: #e06c75;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Default nav layout */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Mobile nav layout */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+}
+
