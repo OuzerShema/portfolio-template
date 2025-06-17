@@ -297,3 +297,39 @@ section p {
   }
 }
 
+.blog-preview {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.blog-preview h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.blog-preview p {
+  color: #ddd;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e06c75;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  background: white;
+  color: #e06c75;
+  border: 1px solid #e06c75;
+}
